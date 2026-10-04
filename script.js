@@ -7,6 +7,7 @@ const attendees = document.getElementById("attendeeCount");
 const progressBar = document.getElementById("progressBar");
 const waterCard = document.querySelector(".team-card.water");
 const zeroCard = document.querySelector(".team-card.zero");
+const powerCard = document.querySelector(".team-card.power");
 const maxCount = 50;
 
 
