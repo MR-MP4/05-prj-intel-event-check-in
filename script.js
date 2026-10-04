@@ -45,18 +45,28 @@ function updateProgress() {
 let winner = null;
 function updateTeamColors() {
   if (count >= maxCount && Number(teamCounts['water'].textContent) > Number(teamCounts['zero'].textContent) && Number(teamCounts['water'].textContent) > Number(teamCounts['power'].textContent)) {
-    winner = 'water';
+    winner = '🌊 Team Water Wise';
     waterCard.style.backgroundColor = "#82dbf9";
+    zeroCard.style.backgroundColor = "#ecfdf3";
+    powerCard.style.backgroundColor = "#fff7ed";
+    waterCard.style.border = "3px solid #0c799e";
 
   } else if (count >= maxCount && Number(teamCounts['zero'].textContent) > Number(teamCounts['water'].textContent) && Number(teamCounts['zero'].textContent) > Number(teamCounts['power'].textContent)) {
 
-    winner = 'zero';
-    zeroCard.style.backgroundColor = "#8af6b7";
+    winner = '🌿 Team Net Zero';
+    zeroCard.style.backgroundColor = "#89f0b4ef";
+    waterCard.style.backgroundColor = "#e8f7fc";
+    powerCard.style.backgroundColor = "#fff7ed";
+
+    zeroCard.style.border = "3px solid #05642f";
 
   } else if (count >= maxCount && Number(teamCounts['power'].textContent) > Number(teamCounts['water'].textContent) && Number(teamCounts['power'].textContent) > Number(teamCounts['zero'].textContent)) {
 
-    winner = 'power';
+    winner = '⚡ Team Renewables';
     powerCard.style.backgroundColor = "#f1c58f";
+    waterCard.style.backgroundColor = "#e8f7fc";
+    zeroCard.style.backgroundColor = "#ecfdf3";
+    powerCard.style.border = "3px solid #b45309";
   }
 }
 
@@ -90,7 +100,7 @@ form.addEventListener("submit", function (event) {
   updateTeamColors();
 
 if (winner !== null) {
-  greeting.textContent = `Welcome, ${name} from ${teamName}. The winning team is ${winner}!`;
+  greeting.textContent = `Welcome, ${name} from ${teamName}. The winner is ${winner}!`;
 } else {
   greeting.textContent = `Welcome, ${name} from ${teamName}`;
 }
